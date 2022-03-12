@@ -43,7 +43,7 @@ struct recipeView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct recipeView_Previews: PreviewProvider {
     static var previews: some View {
         recipeView()
     }

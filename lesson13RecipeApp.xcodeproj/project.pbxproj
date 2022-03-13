@@ -33,6 +33,7 @@
 		53CD859527DA15620065543F /* recipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeDetailView.swift; sourceTree = "<group>"; };
 		53CD859727DABD630065543F /* recipeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeTabView.swift; sourceTree = "<group>"; };
 		53CD859927DCF7070065543F /* recipeFeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeFeaturedView.swift; sourceTree = "<group>"; };
+		53CD859B27DD8F650065543F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +66,7 @@
 		53CD857927D8EFBA0065543F /* lesson13RecipeApp */ = {
 			isa = PBXGroup;
 			children = (
+				53CD859B27DD8F650065543F /* Info.plist */,
 				53CD857A27D8EFBA0065543F /* lesson13RecipeAppApp.swift */,
 				53CD858827D8EFC70065543F /* View */,
 				53CD858927D8EFF60065543F /* ViewModel */,
@@ -340,6 +342,7 @@
 				DEVELOPMENT_TEAM = Z55P587HJV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = lesson13RecipeApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -369,6 +372,7 @@
 				DEVELOPMENT_TEAM = Z55P587HJV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = lesson13RecipeApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

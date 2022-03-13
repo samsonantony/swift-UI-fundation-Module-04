@@ -52,7 +52,7 @@ struct recipeDetailView: View {
                         .padding([.bottom,.top] ,5)
                     ForEach(recipe.ingredients){ items in
                         //  serving portion data inputing
-                        Text("> " + RecipeModel.getPortion(ingredients: items, recipeServings:recipe.servings, targetServing: selectedServingSize) + " " + items.name)
+                        Text("> " + RecipeModel.getPortion(ingredient: items, recipeServings: recipe.servings, targetServings: selectedServingSize) + " " + items.name)
                     }
                 }
                 .padding(.leading)

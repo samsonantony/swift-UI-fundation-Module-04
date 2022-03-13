@@ -35,10 +35,15 @@ struct recipeListView: View {
                                         .clipped()
                                         .cornerRadius(5)
                                         .padding(.leading)
-                                    Text(r.name)
-                                        .padding()
+                                    VStack(alignment: .leading){
+                                        Text(r.name)
+                                            .bold()
+                                        
+                                        RecipeHighlights(highlights: r.highlights)
+                                    } .padding()
                                         .accentColor(.black)
                                     Spacer()
+                                   
                                 }
                             }
                         }

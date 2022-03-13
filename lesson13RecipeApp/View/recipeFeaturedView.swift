@@ -13,6 +13,8 @@ struct recipeFeaturedView: View {
     
     @State var isDetailSelected = false
     
+    @State var tabSelectionIndex = 0
+    
     var body: some View {
         
         VStack(alignment: .leading, spacing: 0){
@@ -27,7 +29,7 @@ struct recipeFeaturedView: View {
                 
             GeometryReader { geo in
                 
-                TabView {
+                TabView(selection: $tabSelectionIndex) {
                     
                     ForEach(0..<model.recipes.count) { Index  in
                         
@@ -63,6 +65,7 @@ struct recipeFeaturedView: View {
                                 recipeDetailView(recipe: model.recipes[Index])
                                 
                             }
+                            .tag(Index)
                             .buttonStyle(PlainButtonStyle())
                             .frame(width: geo.size.width - 40 , height: geo.size.height - 100, alignment: .center)
                             .cornerRadius(20)
@@ -81,17 +84,31 @@ struct recipeFeaturedView: View {
                 Text("Prep time:")
                     .font(.headline)
                     .bold()
-                Text("1 hours")
+                Text(model.recipes[tabSelectionIndex].prepTime)
                 Text("Highlights:")
                     .font(.headline)
                     .bold()
-                Text("healthy, crispy")
+                RecipeHighlights(highlights: model.recipes[tabSelectionIndex].highlights)
                 
             }
             .padding([.leading, .bottom])
         }
+        .onAppear {
+            
+                setFeaturedIndex()
+          
+        }
  
         
+    }
+    
+    // checking the featured recipes
+    func setFeaturedIndex() {
+        
+       var index = model.recipes.firstIndex { Recipe in
+            return Recipe.featured
+        }
+        tabSelectionIndex = index ?? 0
     }
 }
 

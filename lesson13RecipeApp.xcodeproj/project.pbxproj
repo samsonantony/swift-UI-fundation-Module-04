@@ -19,6 +19,7 @@
 		53CD859827DABD630065543F /* recipeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CD859727DABD630065543F /* recipeTabView.swift */; };
 		53CD859A27DCF7070065543F /* recipeFeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CD859927DCF7070065543F /* recipeFeaturedView.swift */; };
 		53CD85D227DDBD5C0065543F /* Rational.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CD85D127DDBD5C0065543F /* Rational.swift */; };
+		53CD85D427DDCD5D0065543F /* RecipeHighlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CD85D327DDCD5D0065543F /* RecipeHighlights.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		53CD859927DCF7070065543F /* recipeFeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipeFeaturedView.swift; sourceTree = "<group>"; };
 		53CD859B27DD8F650065543F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		53CD85D127DDBD5C0065543F /* Rational.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rational.swift; sourceTree = "<group>"; };
+		53CD85D327DDCD5D0065543F /* RecipeHighlights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeHighlights.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				53CD859927DCF7070065543F /* recipeFeaturedView.swift */,
 				53CD857C27D8EFBA0065543F /* recipeListView.swift */,
 				53CD859527DA15620065543F /* recipeDetailView.swift */,
+				53CD85D327DDCD5D0065543F /* RecipeHighlights.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				53CD859027D8F0E70065543F /* recipe.swift in Sources */,
 				53CD859627DA15620065543F /* recipeDetailView.swift in Sources */,
+				53CD85D427DDCD5D0065543F /* RecipeHighlights.swift in Sources */,
 				53CD85D227DDBD5C0065543F /* Rational.swift in Sources */,
 				53CD859227D8F21A0065543F /* recipeModel.swift in Sources */,
 				53CD857D27D8EFBA0065543F /* recipeListView.swift in Sources */,

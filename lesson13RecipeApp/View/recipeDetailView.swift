@@ -42,7 +42,7 @@ struct recipeDetailView: View {
                 }
                 .padding()
                 
-                
+                Divider()
                 
                 // MARK: incredients
                 VStack(alignment: .leading){
@@ -51,11 +51,12 @@ struct recipeDetailView: View {
                         .font(.title)
                         .padding([.bottom,.top] ,5)
                     ForEach(recipe.ingredients){ items in
-                        
-                        Text("> " + items.name)
+                        //  serving portion data inputing
+                        Text("> " + RecipeModel.getPortion(ingredients: items, recipeServings:recipe.servings, targetServing: selectedServingSize) + " " + items.name)
                     }
                 }
                 .padding(.leading)
+                
                 Divider()
                 // MARK: directions
                 

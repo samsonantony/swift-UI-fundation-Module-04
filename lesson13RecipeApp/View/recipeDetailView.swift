@@ -20,27 +20,38 @@ struct recipeDetailView: View {
                 Image(recipe.image)
                     .resizable()
                     .scaledToFill()
-                // MARK: servings size picker
                 
+                // MARK: recipe name
                 VStack(alignment: .leading){
-                    Text("Select serving size:")
+                    Text(recipe.name)
+                        .font(.largeTitle)
                         .bold()
-                        .font(.subheadline)
-                        
+                        .padding([.top], 5)
+                    // MARK: servings size picker
                     
-                    Picker("", selection: $selectedServingSize) {
+                    VStack(alignment: .leading){
+                        Text("Select serving size:")
+                            .bold()
+                            .font(.subheadline)
+                            .padding([.top], 5)
+                            
                         
-                        Text("2").tag(2)
-                        Text("4").tag(4)
-                        Text("6").tag(6)
-                        Text("8").tag(8)
+                        Picker("", selection: $selectedServingSize) {
+                            
+                            Text("2").tag(2)
+                            Text("4").tag(4)
+                            Text("6").tag(6)
+                            Text("8").tag(8)
+                            
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        .frame(width: 150)
                         
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .frame(width: 150)
                     
                 }
                 .padding()
+                
                 
                 Divider()
                 
@@ -72,7 +83,7 @@ struct recipeDetailView: View {
                     }
                 }
                 .padding(.leading)}
-            .navigationBarTitle(recipe.name)
+          
         }
     }
 }

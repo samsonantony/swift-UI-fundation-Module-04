@@ -11,6 +11,8 @@ struct recipeFeaturedView: View {
     
     @EnvironmentObject var model:RecipeModel
     
+    @State var isDetailSelected = false
+    
     var body: some View {
         
         VStack(alignment: .leading, spacing: 0){
@@ -30,23 +32,38 @@ struct recipeFeaturedView: View {
                     ForEach(0..<model.recipes.count) { Index  in
                         
                         if model.recipes[Index].featured == true {
+                           
+                            // button to show the recipe detail
                             
-                            ZStack {
+                            
+                            Button {
                                 
-                                // frame size
-                                Rectangle()
-                                    .foregroundColor(.white)
-                                // adding images and name
-                                VStack{
-                                    Image(model.recipes[Index].image)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .clipped()
-                                    Text(model.recipes[Index].name)
-                                        .padding(5)
+                                self.isDetailSelected = true
+                                
+                            } label: {
+                                ZStack {
+                                    
+                                    // frame size
+                                    Rectangle()
+                                        .foregroundColor(.white)
+                                    // adding images and name
+                                    VStack{
+                                        Image(model.recipes[Index].image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .clipped()
+                                        Text(model.recipes[Index].name)
+                                            .padding(5)
+                                    }
+                                    
                                 }
+                            }
+                            .sheet(isPresented: $isDetailSelected){
+                                
+                                recipeDetailView(recipe: model.recipes[Index])
                                 
                             }
+                            .buttonStyle(PlainButtonStyle())
                             .frame(width: geo.size.width - 40 , height: geo.size.height - 100, alignment: .center)
                             .cornerRadius(20)
                             .shadow(color: .black, radius: 10, x: -5, y: 5)

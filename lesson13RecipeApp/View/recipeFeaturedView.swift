@@ -20,7 +20,7 @@ struct recipeFeaturedView: View {
                 .font(.largeTitle)
                 .bold()
                 .padding(.leading)
-                .padding([.top], 50)
+                .padding([.top], 20)
                 
                 
             GeometryReader { geo in
@@ -80,6 +80,8 @@ struct recipeFeaturedView: View {
 
 struct recipeFeaturedView_Previews: PreviewProvider {
     static var previews: some View {
+       
         recipeFeaturedView()
+            .environmentObject(RecipeModel())
     }
 }

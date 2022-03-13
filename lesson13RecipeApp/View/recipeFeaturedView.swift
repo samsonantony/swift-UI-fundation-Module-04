@@ -12,7 +12,69 @@ struct recipeFeaturedView: View {
     @EnvironmentObject var model:RecipeModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack(alignment: .leading, spacing: 0){
+            
+            Text("Featured recipes")
+            
+                .font(.largeTitle)
+                .bold()
+                .padding(.leading)
+                .padding([.top], 50)
+                
+                
+            GeometryReader { geo in
+                
+                TabView {
+                    
+                    ForEach(0..<model.recipes.count) { Index  in
+                        
+                        if model.recipes[Index].featured == true {
+                            
+                            ZStack {
+                                
+                                // frame size
+                                Rectangle()
+                                    .foregroundColor(.white)
+                                // adding images and name
+                                VStack{
+                                    Image(model.recipes[Index].image)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .clipped()
+                                    Text(model.recipes[Index].name)
+                                        .padding(5)
+                                }
+                                
+                            }
+                            .frame(width: geo.size.width - 40 , height: geo.size.height - 100, alignment: .center)
+                            .cornerRadius(20)
+                            .shadow(color: .black, radius: 10, x: -5, y: 5)
+                        }
+                    }
+                    
+                }
+                
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+            }
+            
+            VStack(alignment: .leading, spacing: 5){
+                
+                Text("Prep time:")
+                    .font(.headline)
+                    .bold()
+                Text("1 hours")
+                Text("Highlights:")
+                    .font(.headline)
+                    .bold()
+                Text("healthy, crispy")
+                
+            }
+            .padding([.leading, .bottom])
+        }
+ 
+        
     }
 }
 
